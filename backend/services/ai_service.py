@@ -12,9 +12,6 @@ URL = "https://integrate.api.nvidia.com/v1/chat/completions"
 MODEL = "mistralai/mistral-medium-3.5-128b"
 
 
-# ----------------------------------------------------
-# Generate Interview Questions
-# ----------------------------------------------------
 def generate_questions(role, experience, difficulty, mode):
 
     prompt = f"""
@@ -82,9 +79,7 @@ Return only the questions.
     return questions_list
 
 
-# ----------------------------------------------------
-# Evaluate Interview Answers
-# ----------------------------------------------------
+
 def evaluate_answers(role, questions, answers):
 
     qa_text = ""
@@ -162,7 +157,6 @@ Only return the JSON object.
 
     except Exception:
 
-        # Remove markdown if AI returns ```json ... ```
         result = result.replace("```json", "").replace("```", "").strip()
 
         try:

@@ -4,9 +4,7 @@ from datetime import datetime
 db = SQLAlchemy()
 
 
-# ---------------------------------------
-# User Model
-# ---------------------------------------
+
 class User(db.Model):
     __tablename__ = "users"
 
@@ -30,9 +28,6 @@ class User(db.Model):
     )
 
 
-# ---------------------------------------
-# Interview Model
-# ---------------------------------------
 class Interview(db.Model):
     __tablename__ = "interviews"
 
@@ -94,9 +89,6 @@ class Interview(db.Model):
     )
 
 
-# ---------------------------------------
-# Response Model
-# ---------------------------------------
 class Response(db.Model):
     __tablename__ = "responses"
 
@@ -122,9 +114,6 @@ class Response(db.Model):
     )
 
 
-# ---------------------------------------
-# Feedback Model
-# ---------------------------------------
 class Feedback(db.Model):
     __tablename__ = "feedback"
 

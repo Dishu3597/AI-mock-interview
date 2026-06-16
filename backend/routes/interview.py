@@ -14,9 +14,8 @@ from services.ai_service import (
 interview = Blueprint("interview", __name__)
 
 
-# ---------------------------------------
 # Create Interview
-# ---------------------------------------
+
 @interview.route("/interview", methods=["POST"])
 @jwt_required()
 def create_interview():
@@ -61,9 +60,9 @@ def create_interview():
         "questions": questions
     }), 201
 
-# ---------------------------------------
+
 # Evaluate Interview
-# ---------------------------------------
+
 @interview.route("/interview/evaluate", methods=["POST"])
 @jwt_required()
 def evaluate_interview():
@@ -102,9 +101,9 @@ def evaluate_interview():
         "message": "Interview evaluated successfully",
         "score": result["score"]
     }), 200
-# ---------------------------------------
+
 # Get All Interviews
-# ---------------------------------------
+
 @interview.route("/interviews", methods=["GET"])
 @jwt_required()
 def get_interviews():

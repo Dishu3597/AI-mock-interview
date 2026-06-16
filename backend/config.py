@@ -13,7 +13,6 @@ class Config:
 
     JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "your-secret-key")
 
-    # Move this inside Config
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(days=7)
 
     NVIDIA_API_KEY = os.getenv("NVIDIA_API_KEY")

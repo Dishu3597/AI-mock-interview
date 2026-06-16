@@ -5,7 +5,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import Interview from "./pages/Interview";
 
-// Protected Route
+
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem("token");
 
