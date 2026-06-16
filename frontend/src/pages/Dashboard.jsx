@@ -76,13 +76,13 @@ export default function MockInterviewDashboard() {
     const token = localStorage.getItem("token");
 
     const response = await axios.get(
-      "http://127.0.0.1:5000/api/interviews",
-      {
+    `${API_URL}/api/interviews`,
+    {
         headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }
-    );
+            Authorization: `Bearer ${token}`,
+        },
+    }
+);
 
     setSessions(response.data);
 
