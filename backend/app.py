@@ -12,7 +12,17 @@ app = Flask(__name__)
 
 app.config.from_object(Config)
 
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:5173"}})
+CORS(
+    app,
+    resources={
+        r"/api/*": {
+            "origins": [
+                "http://localhost:5173",
+                "https://your-app.vercel.app",
+            ]
+        }
+    },
+)
 
 db.init_app(app)
 bcrypt.init_app(app)
@@ -32,5 +42,11 @@ def home():
     }
 
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000)),
+        debug=True,
+    )
