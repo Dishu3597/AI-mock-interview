@@ -18,7 +18,7 @@ CORS(
         r"/api/*": {
             "origins": [
                 "http://localhost:5173",
-                "https://your-app.vercel.app",
+                "https://ai-mock-interview-six-dusky.vercel.app",
             ]
         }
     },
