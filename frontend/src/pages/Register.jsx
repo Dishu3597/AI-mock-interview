@@ -25,7 +25,7 @@ export default function Register() {
 
     try {
       const response = await axios.post(
-    `${API_URL}/api/interview`,
+    `${API_URL}/api/register`,
         {
           name,
           email,
