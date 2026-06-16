@@ -2,6 +2,7 @@ import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
+const API_URL = import.meta.env.VITE_API_URL;
  
 const TOTAL_TIME = 90; // 1.5 minutes in seconds
  
@@ -24,7 +25,7 @@ const onFinish = async () => {
         const token = localStorage.getItem("token");
 
         await axios.post(
-            "http://127.0.0.1:5000/api/interview/evaluate",
+    `${API_URL}/api/interview/evaluate`,
             {
                 interview_id: interviewId,
                 role,

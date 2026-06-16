@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL;
 export default function Register() {
   const navigate = useNavigate();
 
@@ -24,7 +25,7 @@ export default function Register() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/api/register",
+    `${API_URL}/api/interview`,
         {
           name,
           email,

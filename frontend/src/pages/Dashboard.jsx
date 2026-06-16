@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
+const API_URL = import.meta.env.VITE_API_URL;
  
 const jobRoles = [
   "Software Engineer", "Frontend Developer", "Backend Developer",
@@ -32,7 +34,7 @@ export default function MockInterviewDashboard() {
       console.log("JWT Token:", token);
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/api/interview",
+    `${API_URL}/api/interview`,
         {
           role: role,
           experience: exp,
